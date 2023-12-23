@@ -9,6 +9,9 @@ module.exports = NodeHelper.create({
 	var self = this;
 	var url = self.buildUrl(config);
 	var instance = got.extend({
+          https: {
+                   rejectUnauthorized: false
+                  },
 	  hooks: {
 		  beforeRequest: [
 			  options => {
